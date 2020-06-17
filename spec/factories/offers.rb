@@ -1,6 +1,8 @@
-    message { iI want  to help' }
-  association :hel    r, factory: :user
- association :request
-      end
+FactoryBot.define do
+  factory :offer do
+    message { 'iI want  to help' }
+    association :helper, factory: :user
+    association :request
+    status { 'pending' }
+  end
 end
-sta
