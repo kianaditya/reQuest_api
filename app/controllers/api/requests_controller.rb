@@ -19,12 +19,12 @@ class Api::RequestsController < ApplicationController
     render json: requests, each_serializer: Request::IndexSerializer
   end
 
+  private
+
   def update_karma
     Api::KarmaPointsController.update_karma(request_params, current_user)
   end
-
-  private
-
+  
   def karma?
     unless (current_user.karma_points - request_params[:reward].to_i).positive? || (current_user.karma_points - request_params[:reward].to_i == 0)
       render json: { message: 'You dont have enough karma points' }, status: 422

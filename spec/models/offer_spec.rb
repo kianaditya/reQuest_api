@@ -5,6 +5,7 @@ RSpec.describe Offer, type: :model do
     it { is_expected.to have_db_column :helper_id }
   end
 
+    it { is_expected.to have_db_column :status }
   describe 'relations' do
     it { is_expected.to belong_to :helper }
     it { is_expected.to belong_to :request }

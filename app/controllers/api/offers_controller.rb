@@ -24,4 +24,4 @@ class Api::OffersController < ApplicationController
 
     { helper: current_user, request: target_request, message: params[:message] }
   end
-end
+d

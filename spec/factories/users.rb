@@ -2,7 +2,9 @@
 
 FactoryBot.define do
   factory :user do
-    email { 'MyString@mail.com' }
+    sequence :email do |n|
+      "person#{n}@example.com"
+    end
     password { 'MyString123' }
     karma_points { 100 }
   end
