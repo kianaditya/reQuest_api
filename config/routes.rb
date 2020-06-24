@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
   mount_devise_token_auth_for 'User', at: 'api/auth'
   namespace :api do
     resources :offers, only: %i[create show update]
